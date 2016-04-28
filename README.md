@@ -46,4 +46,8 @@ To document Services, I have them grouped based on the name of the service. An e
 
 One of the odd things is the //; on the 8th line. I find that without a semicolon above the first RPC call, Doxygen will not properly document the very first call. In the proto2cpp script the // is removed from in front of the ;. This means you CANNOT USE SEMICOLONS IN YOUR COMMENTS. If you do, the // will be removed from your comment line. This has room for improvement, and I will be working on changing this caveat. 
 
+#### Issues
 
+The above paragraph explains that you cannot use semicolons in your comments, and you need to include a commented semicolon above the first RPC call of every service.
+
+Another issue is something I have mailed the DoxygenUsers group and posted a [StackOverflow](http://stackoverflow.com/questions/36609243/input-filter-in-doxygen-adding-to-mainpage) question about, without any response. The proto2cpp will always add itself to the beginning of my mainpage when I attempt to use a README.md as the mainpage document. This may be a bug in doxygen itself. To get around it, the final line in protofy.sh removes the begining lines of the index.html page to clear out the proto2cpp text. If you are not using a markdown file as your index, you may not run into this issue and will have to remove that line from the protofy.sh. 
