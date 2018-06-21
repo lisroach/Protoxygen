@@ -226,7 +226,7 @@ class proto2cpp:
 
 converter = proto2cpp()
 # Doxygen will give us the file names
-for filename in sys.argv:
+for filename in sys.argv[1:]:
     converter.handleFile(filename)
 
 # end of file
